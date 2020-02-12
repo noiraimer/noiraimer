@@ -39,13 +39,11 @@ external_links = [
         "name": "友情链接",
         "url": "${site_prefix}friends/",
         "brief": "山水会知音",
-        "target": "_self"
     },
     {
         "name": "解语知音",
         "url": "https://noiramr.cn",
         "brief": "温故而知新",
-        "target": "_self"
     },
     {
         "name": "春田花花",
