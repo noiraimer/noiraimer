@@ -3,7 +3,7 @@
 """
 
 # For Maverick
-site_prefix = "/Blog-With-GitHub-Boilerplate/"
+site_prefix = "/"
 source_dir = "../src/"
 build_dir = "../dist/"
 index_page_size = 10
@@ -14,31 +14,39 @@ template = {
     "path": "../Galileo"
 }
 enable_jsdelivr = {
-    "enabled": False,
-    "repo": ""
+    "enabled": True,
+    "repo": "noiraimer/Blog-With-GitHub-Boilerplate@gh-pages"
 }
 
 # 站点设置
-site_name = "我的个人博客"
+site_name = "解语知音"
 site_logo = "${static_prefix}logo.png"
-site_build_date = "2019-12-18T16:51+08:00"
-author = "熊猫小A"
-email = "hi@imalan.cn"
-author_homepage = "https://www.imalan.cn"
-description = "只坚持一种正义。我的正义。"
-key_words = ['Maverick', '熊猫小A', 'Galileo', 'blog']
+site_build_date = "2020/1/31 16:51"
+author = "无尽藏海"
+email = ""
+author_homepage = "https://noiramr.cn"
+description = "温故而知新"
+key_words = ['blog']
 language = 'zh-CN'
 external_links = [
     {
-        "name": "Maverick",
-        "url": "https://github.com/AlanDecode/Maverick",
-        "brief": "🏄‍ Go My Own Way."
+        "name": "友情链接",
+        "url": "${site_prefix}friends/",
+        "brief": "山水会知音",
+        "target": "_self"
     },
     {
-        "name": "三無計劃",
-        "url": "https://www.imalan.cn",
-        "brief": "熊猫小A的主页。"
+        "name": "解语知音",
+        "url": "https://noiramr.cn",
+        "brief": "温故而知新",
+        "target": "_self"
+    },
+    {
+        "name": "春田花花",
+        "url": "",
+        "brief": "春眠不觉晓",
     }
+
 ]
 nav = [
     {
@@ -60,27 +68,52 @@ nav = [
 
 social_links = [
     {
-        "name": "Twitter",
-        "url": "https://twitter.com/AlanDecode",
-        "icon": "gi gi-twitter"
+        "name": "RSS",
+        "url": "https://noiramr.cn/feed/index.xml",
+        "icon": ""
     },
     {
         "name": "GitHub",
-        "url": "https://github.com/AlanDecode",
-        "icon": "gi gi-github"
+        "url": "https://github.com/noiraimer",
+        "icon": ""
+    },
+        {
+        "name": "邮件",
+        "url": "mailto:liushu1187419589@live.com",
+        "icon": ""
     },
     {
-        "name": "Weibo",
-        "url": "https://weibo.com/5245109677/",
-        "icon": "gi gi-weibo"
-    }
+        "name": "语雀",
+        "url": "https://www.yuque.com/blancaimer",
+        "icon": ""
+    },
 ]
+
+valine = {
+    "enable": True,
+    "el": '#vcomments',
+    "appId": "A5LqJrDsqGpBkcSAG6rOaquz-gzGzoHsz",
+    "appKey": "MpkTdroEzvOmHrw5l1vnX8Oq",
+    "placeholder": "想破脑袋也不知道提示语写啥"
+}
 
 head_addon = r'''
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//noiramr.cn" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/css/custom.css">
+<script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/js/instant.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/js/email-decode.min.js"></script>
+<link rel="shortcut icon" href="${static_prefix}favicon.ico?v=yyLyaqbyRG">
 '''
 
-footer_addon = ''
+footer_addon = r'''
+<p>Copyright © 2020 无尽藏海</p>
+'''
 
-body_addon = ''
+body_addon = r'''
+
+'''
+main_addon = r'''
+
+'''

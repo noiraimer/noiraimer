@@ -2,21 +2,27 @@
 layout: page
 title: 关于
 slug: about
-date: 2017/06/28 17:26:00
+date: 2020/02/01
 status: publish
-author: AlanDecode
+author: 无尽藏海
 categories: 
-  - Maverick
-  - Dev
+  - 关于
 tags: 
-  - theme
+  - 自我介绍
 ---
 
-这里是我的个人博客，通过 GitHub 管理与构建。
+## 关于博客
 
+这是一个没啥人气的博客，记录大事小事。
 
-## Contact
+## 关于博主
 
-Email: hi#imalan.cn (replace # with @)
+九六年生人，昔日白日梦想家，朋友甚少。
 
-Telegram：[AlanDecode](https://t.me/alandecode)
+喜欢电影、动画、音乐，不会唱跳Rap。
+
+## 联系方式
+
+Email: <a href="mailto:liushu1187419589@live.com">liushu1187419589@live.com</a>
+
+Telegram：[Blancaimer](https://t.me/Blancaimer)
