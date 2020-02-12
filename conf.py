@@ -58,7 +58,6 @@ nav = [
     {
         "name": "首页",
         "url": "${site_prefix}",
-        "target": "_self"
     },
     {
         "name": "归档",
@@ -68,7 +67,6 @@ nav = [
     {
         "name": "关于",
         "url": "${site_prefix}about/",
-        "target": "_self"
     }
 ]
 
