@@ -16,7 +16,7 @@ archives_page_size = 20
 template = {
     "name": "Galileo",
     "type": "git",
-    "url": "https://github.com/noiraimer/Galileo.git",
+    "url": "https://github.com/noiraimer/Galileo-custom.git",
     "branch": "latest"
 }
 enable_jsdelivr = {
