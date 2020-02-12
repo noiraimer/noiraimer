@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="blog" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="解语知音 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="解语知音 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/assets/galileo-3f4dcc35c9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/assets/katex.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/3c2bc798f6de4fd3919369066c2de7cf.json"
+        }
+    </script>
+    
+<title>Cloudflare线路优化 - 解语知音</title>
+<meta name="author" content="无尽藏海" />
+<meta name="description" content="使用CNAME接入Cloudflare实现线路优化" />
+<meta property="og:title" content="Cloudflare线路优化 - 解语知音" />
+<meta property="og:description" content="使用CNAME接入Cloudflare实现线路优化" />
+<meta property="og:site_name" content="解语知音" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/gitpage-cloudflare/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-02-10T00:00:00-00.00" />
+<meta name="twitter:title" content="Cloudflare线路优化 - 解语知音" />
+<meta name="twitter:description" content="使用CNAME接入Cloudflare实现线路优化" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//noiramr.cn" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/css/custom.css">
+<script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/js/instant.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/js/email-decode.min.js"></script>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/favicon.ico?v=yyLyaqbyRG">
+
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">解语知音</a></h1>
+                        <p>温故而知新</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Cloudflare线路优化</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>无尽藏海</span>
+                <time>
+                    2020-02-10
+                </time>
+                
+                in <a no-style class="category" href="/category/技术/">
+                    技术
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <div class="notice">去年用Hexo简单配置了一个博客，但是访问速度很不理想(特指移动宽带)。绑定免费域名套上CDN后有所改善，然而好景不长，域名到期后开始收费(特指Freenom)，遂放弃。后来找到Maverick搭建Gitpage，决定好好利用一下，然后在博客优化上做点功夫。所有技术及工具均来自网络，我只是一名搬运工哈哈。</div><p>网上很多优化教程都是针对CF基础功能的配置，治标不治本。后来找到使用CNAME替代NS接入CF的方法，比较适用于国内，也是我推荐的。一开始我真没搞懂“CNAME接入”是什么意思😆我寻思这Cloudflare（简称CF）本身就有CNAME了啊。现在才明白其实是为了：1.使用DNS(国内)替代DNS(CF)。2.CNAME指向可选CF节点(可以自行挑选最优节点)。</p>
+<p>即由：用户-&gt;DNS(CF)-&gt;CDN(CF)-&gt;Github</p>
+<p>改成：用户-&gt;DNS(国内)-&gt;CDN(CF)-&gt;Github</p>
+<h2>原因探究</h2>
+<h3>NS接入CF的问题</h3>
+<p>那么为什么要放弃使用DNS(CF)呢？我们看看下面这张图：</p>
+<p><figure style="flex: 96.12546125461255" ><img width="1563" height="813" src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/archives/assets/583213d0f01a3ff9626ade9a357c8c92.webp" /><figcaption>2、3、5、8相对不畅通</figcaption></figure></p>
+<p>NS接入在大陆会产生如下两个问题：</p>
+<h4>1.DNS解析缓慢（对应2、3）</h4>
+<p>DNS将域名转换为IP地址，充当互联网的地址簿。当用户输入网站域名时，该查询通常会转到递归DNS以查找相应的计算机地址。如果递归DNS未查询到，则会向权威DNS查询，权威DNS将该域名映射的IP地址给本地。最后本地服务器将获取到的IP返回给用户，并进行网站访问。所以域名的NS在国外的话，解析速度会变慢。</p>
+<h4>2.连接CDN不畅通（对应5、8）</h4>
+<p>大陆用户用DNS(CF)解析域名，经常会返回美国IP，造成国内访问不畅，延时长是一方面，间歇性的疯狂丢包同样令人抓狂。</p>
+<h2>解决方法</h2>
+<h3>CNAME接入CF</h3>
+<p>使用CNAME接入CF缓解了上述两个问题，如下图所示：</p>
+<p><figure style="flex: 99.80842911877394" ><img width="1563" height="783" src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/archives/assets/c789651333bee35b8de012bd7e3db083.webp" /></figure></p>
+<p>我们可以在本地DNS设定优选CDN的IP，DNS(国内)就不必去DNS(CF)寻找，用户可以很快得到优选CDN的IP，并与其畅通地交换数据。</p>
+<h3>CDN缓存所有静态文件(进一步优化)</h3>
+<p>如果不设置CDN缓存，用户每次请求，CDN都会去源站寻找。虽然很快，但是自用主机请求次数多了也会造成拥堵。缓解的方法是把Github或主机的静态文件复制到CDN，定时清理重新获取。这样就可以减少源服务器的压力。</p>
+<p><figure style="flex: 84.40514469453376" ><img width="1575" height="933" src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/archives/assets/69b7ce1d079d0079fb13dce5c9fec4c4.webp" /></figure></p>
+<hr>
+<h2>改造方法</h2>
+<p><figure style="flex: 227.2983114446529" ><img width="2423" height="533" src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/archives/assets/5443269dbe6ed60bbfdd5feb0eebab24.webp" /><figcaption>方法流程</figcaption></figure></p>
+<p>CF没有对免费用户开放CNAME接入，但是可以使用Cloudflare Partner（简称CP）曲线救国，我用的是<a href="https://cdn.bnxb.com">笨牛网</a>。步骤如下：</p>
+<h3>Cloudflare Partner配置</h3>
+<p>1.若未在官网申请过域名接入，可直接在CP添加域名。</p>
+<div class="notice">PS：如果是使用的主机，回源地址先不必填，提交后到“解析管理”把默认生成的CNAME记录改成A记录（IP方式回源）。</div><p><figure style="flex: 97.01086956521739" ><img width="1071" height="552" src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/archives/assets/823eb2f7df0021278f8728463d13d3dd.png" /></figure></p>
+<p>2.若已在CF中添加域名，可在“域名列表”中找到并到“解析设置”中选择“接入本站CNAME”即可</p>
+<p><figure style="flex: 120.0" ><img width="744" height="310" src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/archives/assets/5e3e2ececcf306fd60f7e467e59ff6e5.png" /></figure></p>
+<h3>DNS(国内)解析设置</h3>
+<div class="notice">若曾把域名的DNS服务器改为CF，需要在域名面板把其还原为默认，或另选DNS服务商，最好是国内的，没改过就不必动啦。我的域名是在万网买的，所以直接用了阿里云的DNS。</div><p>在DNS解析设置里添加一个记录，主机记录就随意啦，但是要和CP面板保持一致。记录值是重点，可以到网上搜索稳定的CDN节点。推荐两个列表：<a href="https://wzfou.com/question/11632/">Cloudflare指定IP集合</a>和<a href="https://www.iamhippo.com/2019-06/866.html">Cloudflare 推荐节点IP</a>，推荐网上多搜索，百度云合作节点或者1.0.0.1也不错。可以只指定默认线路，也可针对移动、联通、电信分设不同记录值。</p>
+<p><figure style="flex: 69.57264957264957" ><img width="814" height="585" src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/archives/assets/02958c964757a62d54b86d15b43aefb7.png" /></figure></p>
+<p>至此DNS的配置就结束了，等其生效即可。</p>
+<h3>其他配置</h3>
+<h4>CDN缓存优化</h4>
+<p>页面规则(Page Rules)添加一条规则，用来缓存所有内容。</p>
+<p><figure style="flex: 81.99300699300699" ><img width="938" height="572" src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/archives/assets/02359c3a0a49fe20ab76d682dc361fcd.png" /></figure></p>
+<h4>压缩HTML、CSS、JS</h4>
+<p>“Speed”-&gt;“Optimization”-&gt;“Auto Minify”选中HTML、CSS、JS。</p>
+<hr>
+<h2>三、后记</h2>
+<p>在万网买了域名之后，原想备案后白嫖国内CDN，结果备案还要买三个月主机🤦‍♂️本来是只想加速Gitpage的说。罢了罢了，只能接着用Cloudflare，网上发现了CNAME教程，就索性整理一下。CNAME接入需要定位到稳定的CDN节点才有好的效果，所以不是很完美，现在我的博客有时也会加载不出来，但是比原先好了不少。这是一个不靠谱的优化推荐😆用词及绘图有不正确的地方欢迎指出。</p>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Gitpage/">#Gitpage</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Cloudflare/">#Cloudflare</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <h3>没有了</h3>
+        <p class="yue">这是最新的文章</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/2019-nCoV/">2019-nCoV</a>
+        <p class="yue">新型冠状病毒信息收集</p>
+    </div>
+
+</section>
+
+
+    
+        <script>
+            var initValine = function () {
+                new Valine({"enable": true, "el": "#vcomments", "appId": "A5LqJrDsqGpBkcSAG6rOaquz-gzGzoHsz", "appKey": "MpkTdroEzvOmHrw5l1vnX8Oq", "placeholder": "\u60f3\u7834\u8111\u888b\u4e5f\u4e0d\u77e5\u9053\u63d0\u793a\u8bed\u5199\u5565"});
+            }
+        </script>
+        <script defer src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js' onload="initValine()"></script>
+        <div id="vcomments"></div>
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">解语知音</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2020 无尽藏海</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+<p>Copyright © 2020 无尽藏海</p>
+
+                            </span>
+                            <nav class="social-links">
+                                <ul><li><a class="no-style" title="RSS" href="https://noiramr.cn/feed/index.xml" target="_blank"><i class=""></i>RSS</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/noiraimer" target="_blank"><i class=""></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="邮件" href="mailto:liushu1187419589@live.com" target="_blank"><i class=""></i>邮件</a></li><span class="separator">·</span><li><a class="no-style" title="语雀" href="https://www.yuque.com/blancaimer" target="_blank"><i class=""></i>语雀</a></li></ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2020/1/31 16:51"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/assets/galileo-dc4baa7cf4.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--katex-->
+    <script defer src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+
+    
+
+
+    </body>
+</html>

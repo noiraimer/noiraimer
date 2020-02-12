@@ -5,15 +5,36 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	
 
 <url>
-    <loc>/Blog-With-GitHub-Boilerplate/about/</loc>
-    <lastmod>2017-06-28</lastmod>
+    <loc>/friends/</loc>
+    <lastmod>2020-02-11</lastmod>
     <changefreq>always</changefreq>
     <priority>0.8</priority>
 </url>
 
 <url>
-    <loc>/Blog-With-GitHub-Boilerplate/archives/typography/</loc>
-    <lastmod>2019-12-18</lastmod>
+    <loc>/about/</loc>
+    <lastmod>2020-02-01</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>/archives/gitpage-cloudflare/</loc>
+    <lastmod>2020-02-10</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>/archives/2019-nCoV/</loc>
+    <lastmod>2020-02-03</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>/archives/十九大报告/</loc>
+    <lastmod>2020-02-01</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
 </url>
