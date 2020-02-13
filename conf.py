@@ -34,6 +34,7 @@ author_homepage = "https://noiramr.cn"
 description = "温故而知新"
 key_words = ['blog']
 language = 'zh-CN'
+background_img = 'https://open.saintic.com/api/bingPic/'
 external_links = [
     {
         "name": "友情链接",
