@@ -115,7 +115,7 @@ head_addon = r'''
 '''
 
 footer_addon = r'''
-<p>Copyright © 2020 无尽藏海</p>
+
 '''
 
 body_addon = r'''
