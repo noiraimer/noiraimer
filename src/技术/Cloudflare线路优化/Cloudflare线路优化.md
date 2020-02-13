@@ -13,19 +13,6 @@ tags:
 excerpt: 使用CNAME接入Cloudflare实现线路优化
 ---
 
-目录
-
-- [原理探究](#原理探究)
-  - [问题](#问题)
-  - [解决方案](#解决方案)
-    - [CNAME接入CF](#cname接入cf)
-    - [CDN缓存静态文件(可选)](#cdn缓存静态文件可选)
-- [改造方法](#改造方法)
-  - [Cloudflare Partner配置](#cloudflare-partner配置)
-  - [DNS(国内)解析设置](#dns国内解析设置)
-  - [CDN缓存优化](#cdn缓存优化)
-- [后记](#后记)
-
 [notice]去年用Hexo简单配置了一个博客，但是访问速度很不理想(特指移动宽带)。绑定免费域名套上CDN后有所改善，然而好景不长，域名到期后开始收费(特指Freenom)，遂放弃。后来找到Maverick搭建Gitpage，决定好好利用一下，在博客优化上做点功夫。所有技术及工具均来自网络，我只是一名搬运工哈哈。[/notice]
 
 网上很多优化教程都是针对CF基础功能的配置，治标不治本。后来找到使用CNAME替代NS接入CF的方法，比较适用于国内，也是我推荐的。一开始我真没搞懂“CNAME接入”是什么意思😆我寻思这Cloudflare（简称CF）本身就有CNAME了啊。后来明白其实是为了**用DNS(国内)替代DNS(CF)，这样就能自定义要指向的DNS(CF)节点，从而我们可以挑选国内访问较稳定的节点**。
@@ -50,13 +37,13 @@ DNS将域名转换为IP地址，充当互联网的地址簿。当用户输入网
 
 免费用户无法指定CDN节点，大陆用户用DNS(CF)解析域名，经常会返回美国IP，造成国内访问不畅，响应慢，间歇性丢包。
 
-### 解决方案
+### 对策
 
 #### CNAME接入CF
 
 ![](assets/Cloudflare-2.webp)
 
-我们可以在本地DNS设定优选CDN的IP，DNS(国内)就不必去DNS(CF)寻找，用户可以很快得到优选CDN的IP，并与其畅通地交换数据。
+CNAME接入后我们可以在本地DNS设定优选CDN的IP，DNS(国内)就不必去DNS(CF)寻找，用户可以很快得到优选CDN的IP，并与其畅通地交换数据。
 
 PS：虽然说的是“CNAME接入CDN(CF)”，但在设置DNS(国内)解析记录时却是使用的A记录，目的是为了更自由地选择CDN节点。
 
@@ -68,7 +55,7 @@ PS：虽然说的是“CNAME接入CDN(CF)”，但在设置DNS(国内)解析记�
 
 ---
 
-## 改造方法
+## 动手改造
 
 ![方法流程](assets/step.webp)
 
@@ -96,11 +83,13 @@ CF没有对免费用户开放CNAME接入，但是可以使用Cloudflare Partner�
 
 ### CDN缓存优化
 
+#### 缓存静态内容
+
 适用于静态博客(Gitpage)，Wordpress用户请搜索排除后端程序的规则。页面规则(Page Rules)添加一条规则，用来缓存所有内容。
 
 ![](assets/2020-02-11-16-51-15.png)
 
-**压缩HTML、CSS、JS**
+#### 压缩HTML、CSS、JS
 
 “Speed”->“Optimization”->“Auto Minify”选中HTML、CSS、JS。
 
