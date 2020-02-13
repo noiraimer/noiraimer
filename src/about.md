@@ -26,3 +26,13 @@ tags:
 Email: <a href="mailto:liushu1187419589@live.com">liushu1187419589@live.com</a>
 
 Telegram：[Blancaimer](https://t.me/Blancaimer)
+
+## 致谢
+
+感谢以下项目为本博客提供服务支持：
+
+- 博客生成：[Maverick](https://github.com/AlanDecode/Maverick)
+- 主题模板：[Galileo](https://github.com/AlanDecode/Maverick-Theme-Galileo)
+- 托管服务：[Github Pages](https://pages.github.com/)
+- 持续集成：[Github Action](https://help.github.com/cn/actions)
+- 内容分发：[Cloudflare](https://www.cloudflare.com/)&[jsDelivr](https://www.jsdelivr.com/)
