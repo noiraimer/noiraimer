@@ -101,7 +101,8 @@ valine = {
     "el": '#vcomments',
     "appId": "A5LqJrDsqGpBkcSAG6rOaquz-gzGzoHsz",
     "appKey": "MpkTdroEzvOmHrw5l1vnX8Oq",
-    "placeholder": "想破脑袋也不知道提示语写啥"
+    "placeholder": "想破脑袋也不知道提示语写啥",
+    "serverURLs": "tab"
 }
 
 head_addon = r'''
