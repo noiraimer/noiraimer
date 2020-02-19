@@ -102,7 +102,7 @@ valine = {
     "appId": "A5LqJrDsqGpBkcSAG6rOaquz-gzGzoHsz",
     "appKey": "MpkTdroEzvOmHrw5l1vnX8Oq",
     "placeholder": "想破脑袋也不知道提示语写啥",
-    "serverURLs": "tab"
+    "serverURLs": "https://tab.avoscloud.com"
 }
 
 head_addon = r'''
