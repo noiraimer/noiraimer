@@ -48,9 +48,9 @@ external_links = [
         "target": "_self"
     },
     {
-        "name": "春田花花",
+        "name": "解语知识",
         "url": "",
-        "brief": "春眠不觉晓",
+        "brief": "学而时习之",
         "target": "_blank"
     }
 
