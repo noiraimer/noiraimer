@@ -49,7 +49,7 @@ external_links = [
     },
     {
         "name": "解语知识",
-        "url": "",
+        "url": "https://wiki.noiramr.cn",
         "brief": "学而时习之",
         "target": "_blank"
     }
