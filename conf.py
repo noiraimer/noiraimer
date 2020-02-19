@@ -99,10 +99,11 @@ social_links = [
 valine = {
     "enable": True,
     "el": '#vcomments',
-    "appId": "A5LqJrDsqGpBkcSAG6rOaquz-gzGzoHsz",
-    "appKey": "MpkTdroEzvOmHrw5l1vnX8Oq",
+    "appId": "KgL1pm7KXVOK7PlT4SFO8vYJ-9Nh9j0Va",
+    "appKey": "dkFFObbxzdOEUUccBaq0Oxsp",
     "placeholder": "想破脑袋也不知道提示语写啥",
-    "serverURLs": "https://leancloud.cn/"
+    "comment_count": "true",
+    "visitor":  "true"
 }
 
 head_addon = r'''
