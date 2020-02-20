@@ -13,7 +13,5 @@ tags:
 ---
 
 [links]
-[CWorld's Blog](https://blog.cworld.top/)+(https://sdn.geekzu.org/avatar/85b870f6b1a177981d3e9566e3ad7264?s=160)
+[CWorld's Blog](https://blog.cworld.top/)+(https://gravatar.cat.net/avatar/85b870f6b1a177981d3e9566e3ad7264?s=160)
 [/links]
-
-求知若渴，虚怀若谷。
