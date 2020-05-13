@@ -5,7 +5,7 @@ slug: friends
 date: 2020/02/11
 status: publish
 author: 无尽藏海
-comment: false
+comment: true
 categories: 
   - 友链
 tags: 
@@ -13,5 +13,7 @@ tags:
 ---
 
 [links]
-[CWorld's Blog](https://blog.cworld.top/)+(https://gravatar.cat.net/avatar/85b870f6b1a177981d3e9566e3ad7264?s=160)
+
+[科技花](https://blog.zaihua.me)+(https://pic-1256152169.cos.ap-shanghai.myqcloud.com/20200409210254.jpg)
+
 [/links]

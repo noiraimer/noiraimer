@@ -11,6 +11,10 @@ tags:
   - 自我介绍
 ---
 
+[notice]
+要自律哈哈，博客暂停一段时间，我会把学科知识记录到[Wiki](https://wiki.noiramr.cn)，坚持更新督促自己学习。
+[/notice]
+
 ## 关于博客
 
 这是一个没啥人气的博客，记录大事小事。
@@ -33,6 +37,6 @@ Telegram：[Blancaimer](https://t.me/Blancaimer)
 
 - 博客生成：[Maverick](https://github.com/AlanDecode/Maverick)
 - 主题模板：[Galileo](https://github.com/AlanDecode/Maverick-Theme-Galileo)
-- 托管服务：[Github Pages](https://pages.github.com/)
-- 持续集成：[Github Action](https://help.github.com/cn/actions)
-- 内容分发：[Cloudflare](https://www.cloudflare.com/)&[jsDelivr](https://www.jsdelivr.com/)
+- 托管服务：[Github](https://github.com/)&[Coding pages](https://coding.net/)
+- 持续集成：[Coding CI](https://help.github.com/cn/actions)
+- 内容分发：[jsDelivr](https://www.jsdelivr.com/)
