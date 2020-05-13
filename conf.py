@@ -14,13 +14,14 @@ archives_page_size = 20
 #    "path": "../Maverick-Theme-Galileo"
 #}
 template = {
-    "name": "Galileo-custom",
-    "type": "local",
-    "path": "../Galileo-custom"
+    "name": "Galileo",
+    "type": "git",
+    "url": "https://github.com/noiraimer/Galileo-custom.git",
+    "branch": "latest"
 }
 enable_jsdelivr = {
     "enabled": True,
-    "repo": "noiraimer/ci@master"
+    "repo": "noiraimer/Blog-With-GitHub-Boilerplate@gh-pages"
 }
 
 # 站点设置
