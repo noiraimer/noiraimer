@@ -37,6 +37,6 @@ Telegram：[Blancaimer](https://t.me/Blancaimer)
 
 - 博客生成：[Maverick](https://github.com/AlanDecode/Maverick)
 - 主题模板：[Galileo](https://github.com/AlanDecode/Maverick-Theme-Galileo)
-- 托管服务：[Github](https://github.com/)&[Coding pages](https://coding.net/)
-- 持续集成：[Coding CI](https://help.github.com/cn/actions)
+- 托管服务：[Github](https://github.com/)
+- 持续集成：[Github Action](https://help.github.com/cn/actions)
 - 内容分发：[jsDelivr](https://www.jsdelivr.com/)
