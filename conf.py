@@ -14,14 +14,13 @@ archives_page_size = 20
 #    "path": "../Maverick-Theme-Galileo"
 #}
 template = {
-    "name": "Galileo",
-    "type": "git",
-    "url": "https://github.com/noiraimer/Galileo-custom.git",
-    "branch": "latest"
+    "name": "Galileo-custom",
+    "type": "local",
+    "path": "../Galileo-custom"
 }
 enable_jsdelivr = {
     "enabled": True,
-    "repo": "noiraimer/Blog-With-GitHub-Boilerplate@gh-pages"
+    "repo": "noiraimer/ci@master"
 }
 
 # 站点设置
@@ -29,7 +28,7 @@ site_name = "解语知音"
 site_logo = "${static_prefix}logo.png"
 site_build_date = "2020/1/31 16:51"
 author = "无尽藏海"
-email = ""
+email = "liushu1187419589@live.com"
 author_homepage = "https://noiramr.cn"
 description = "温故而知新"
 key_words = ['blog']
@@ -42,9 +41,9 @@ external_links = [
         "target": "_self"
     },
     {
-        "name": "解语知音",
-        "url": "https://noiramr.cn",
-        "brief": "温故而知新",
+        "name": "朝花夕拾",
+        "url": "https://noiramr.cn/archives/day",
+        "brief": "我思故我在",
         "target": "_self"
     },
     {
@@ -101,16 +100,20 @@ valine = {
     "el": '#vcomments',
     "appId": "KgL1pm7KXVOK7PlT4SFO8vYJ-9Nh9j0Va",
     "appKey": "dkFFObbxzdOEUUccBaq0Oxsp",
-    "placeholder": "想破脑袋也不知道提示语写啥",
+    "placeholder": "说点儿什么",
     "comment_count": "true",
-    "visitor":  "true"
+    "visitor":  "true",
+    "notify": "true"
 }
 
 head_addon = r'''
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/ci@master/css/custom-0001.css">
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 <link rel="dns-prefetch" href="//noiramr.cn" />
 <link rel="shortcut icon" href="${static_prefix}favicon.ico?v=yyLyaqbyRG">
+<script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
 '''
 
 footer_addon = r'''
@@ -118,8 +121,8 @@ footer_addon = r'''
 '''
 
 body_addon = r'''
-<script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/js/instant.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-<script src="https://cdn.jsdelivr.net/gh/noiraimer/Blog-With-GitHub-Boilerplate@gh-pages/js/email-decode.min.js"></script>
+<script src="${static_prefix}js/instant.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<script src="${static_prefix}js/email-decode.min.js"></script>
 '''
 main_addon = r'''
 
