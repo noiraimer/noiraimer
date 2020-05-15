@@ -106,7 +106,7 @@ valine = {
     "visitor":  "true",
     "emojiCDN": 'https://i0.hdslb.com/bfs/emote/', 
     "enableQQ": "true",
-    "emojiMaps": "{
+    "emojiMaps": {
                   "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
                   "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
                   "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
@@ -156,7 +156,7 @@ valine = {
                   "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
                   "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
                   "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
-                  "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",}"
+                  "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"}
 }
 
 head_addon = r'''
