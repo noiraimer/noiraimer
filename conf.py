@@ -105,7 +105,7 @@ valine = {
     "comment_count": "true",
     "visitor":  "true",
     "enableQQ": "true",
-    "serverURLs": "https://avoscloud.com",
+    "serverURLs": "https://tab.leancloud.cn",
     "emojiMaps": {
                   "tv_doge": "https://i0.hdslb.com/bfs/emote/6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
                   "tv_亲亲": "https://i0.hdslb.com/bfs/emote/a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
