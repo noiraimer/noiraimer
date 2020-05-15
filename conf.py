@@ -104,7 +104,7 @@ valine = {
     "placeholder": "说点什么，昵称可填QQ号，上述信息均可留空。",
     "comment_count": "true",
     "visitor":  "true",
-    "notify": "true",
+    "emojiCDN": 'https://i0.hdslb.com/bfs/emote/', 
     "enableQQ": "true"
 }
 
