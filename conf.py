@@ -108,7 +108,7 @@ valine = {
 }
 
 head_addon = r'''
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/blog@master/css/custom-0001.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/css/custom-0001.css">
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 <link rel="dns-prefetch" href="//noiramr.cn" />
