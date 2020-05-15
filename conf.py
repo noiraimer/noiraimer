@@ -101,10 +101,12 @@ valine = {
     "el": '#vcomments',
     "appId": "KgL1pm7KXVOK7PlT4SFO8vYJ-9Nh9j0Va",
     "appKey": "dkFFObbxzdOEUUccBaq0Oxsp",
-    "placeholder": "说点儿什么",
+    "placeholder": "说点什么，上述信息可留空。",
     "comment_count": "true",
     "visitor":  "true",
-    "notify": "true"
+    "notify": "true",
+    "meta": "['昵称/QQ','邮箱','网址(https)']",
+    "enableQQ": "true"
 }
 
 head_addon = r'''
