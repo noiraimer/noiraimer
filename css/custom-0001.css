@@ -9,4 +9,12 @@
 }
 #ga-header::before {
 	bottom:-2rem;
+	height:3px;
+	background:rgba(51,51,51,.9);
+}
+@media screen and (max-width:660px) {
+	#ga-header::before {
+	 width:calc(100%);
+	 left:0px;
+	}
 }
