@@ -1,3 +1,12 @@
 .dplayer.dplayer-mobile .dplayer-controller .dplayer-icons .dplayer-play-icon {
  display:initial !important;
 }
+#ga-header {
+	margin:3rem 0 2.15rem;
+}
+#ga-header div[first] aside#ga-brand h1 {
+	font-size:3.15rem;
+}
+#ga-header::before {
+	bottom:-2rem;
+}
