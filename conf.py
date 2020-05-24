@@ -177,6 +177,7 @@ footer_addon = r'''
 body_addon = r'''
 <script src="//instant.page/5.0.1" type="module" integrity="sha384-0DvoZ9kNcB36fWcQApIMIGQoTzoBDYTQ85e8nmsfFOGz4RHAdUhADqJt4k3K2uLS"></script>
 <script src="${static_prefix}js/email-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/js/time-0002.js"></script>
 '''
 main_addon = r'''
 

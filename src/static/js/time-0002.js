@@ -9,12 +9,21 @@ function time(){//时间函数
 	var day=date.getDate();
 	day = day<10?"0"+day:day;//获取此刻几号
 	
-	var week = date.getDay();
-
-	//var week="日一二三四五六".charAt(date.getDay());//获取此刻周几
+	//var week = date.getDay();
+	//var week="Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday".charAt(date.getDay());//获取此刻周几
 	
+	var weekday=new Array(7)
+	weekday[0]="Sunday"
+	weekday[1]="Monday"
+	weekday[2]="Tuesday"
+	weekday[3]="Wednesday"
+	weekday[4]="Thursday"
+	weekday[5]="Friday"
+	weekday[6]="Saturday"
 	//根据id="time"获取span标签并调用innerHTML方法为标签内添加内容
 	document.getElementById("ga-time-day").innerHTML = "今天是"+years+"年"+month+"月"+day+"日";
-	document.getElementById("ga-time-week").innerHTML = " "+week;
+	document.getElementById("ga-time-week").innerHTML = "&nbsp"+weekday[date.getDay()];
 	//添加时间信息
+
 }
+time();
