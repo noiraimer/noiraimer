@@ -165,7 +165,7 @@ head_addon = r'''
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 <link rel="dns-prefetch" href="//noiramr.cn" />
 <link rel="shortcut icon" href="${static_prefix}favicon.ico?v=yyLyaqbyRG">
-<script src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/js/time-0001.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/js/time-0002.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
 '''
@@ -177,7 +177,6 @@ footer_addon = r'''
 body_addon = r'''
 <script src="//instant.page/5.0.1" type="module" integrity="sha384-0DvoZ9kNcB36fWcQApIMIGQoTzoBDYTQ85e8nmsfFOGz4RHAdUhADqJt4k3K2uLS"></script>
 <script src="${static_prefix}js/email-decode.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/js/time-0002.js"></script>
 '''
 main_addon = r'''
 
