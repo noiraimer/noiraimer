@@ -26,4 +26,3 @@ function time(){//时间函数
 	//添加时间信息
 
 }
-time();
