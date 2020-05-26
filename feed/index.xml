@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>解语知音</title><link>/</link><description>温故而知新</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/logo.png</url><title>解语知音</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Sun, 24 May 2020 11:45:10 +0806</lastBuildDate><pubDate>Sun, 24 May 2020 11:45:10 +0806</pubDate><item><title>十九大报告</title><link>/archives/十九大报告/</link><description>&lt;p&gt;&lt;figure style="flex: 88.92092257001647" &gt;&lt;img width="2159" height="1214" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/fb1035b07a7a4c305af12622f74aa126.webp" /&gt;&lt;figcaption&gt;misaka&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>解语知音</title><link>/</link><description>温故而知新</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/logo.png</url><title>解语知音</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Tue, 26 May 2020 12:41:05 +0806</lastBuildDate><pubDate>Tue, 26 May 2020 12:41:05 +0806</pubDate><item><title>十九大报告</title><link>/archives/十九大报告/</link><description>&lt;p&gt;&lt;figure style="flex: 88.92092257001647" &gt;&lt;img width="2159" height="1214" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/fb1035b07a7a4c305af12622f74aa126.webp" /&gt;&lt;figcaption&gt;misaka&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;习近平：决胜全面建成小康社会 夺取新时代中国特色社会主义伟大胜利&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;——在中国共产党第十九次全国代表大会上的报告&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;来源：新华社2017年10月18日&lt;/p&gt;
@@ -334,4 +334,35 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</description><author>liushu1187419589@live.com (无尽藏海)</author><guid isPermaLink="true">/archives/animation/</guid><pubDate>Fri, 01 May 2020 00:00:00 +0806</pubDate></item></channel></rss>
+</description><author>liushu1187419589@live.com (无尽藏海)</author><guid isPermaLink="true">/archives/animation/</guid><pubDate>Fri, 01 May 2020 00:00:00 +0806</pubDate></item><item><title>经济学名词</title><link>/archives/economic-words/</link><description>&lt;h1&gt;经济学名词&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th style="text-align:center"&gt;&lt;strong&gt;名称&lt;/strong&gt;&lt;/th&gt;
+&lt;th style="text-align:center"&gt;&lt;strong&gt;例子&lt;/strong&gt;&lt;/th&gt;
+&lt;th style="text-align:center"&gt;&lt;strong&gt;释义&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;公地悲剧&lt;/td&gt;
+&lt;td style="text-align:center"&gt;共享单车&lt;/td&gt;
+&lt;td style="text-align:center"&gt;倾向于过度使用公共资源/财产，造成资源枯竭&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;灰犀牛事件&lt;/td&gt;
+&lt;td style="text-align:center"&gt;贫富差距扩大&lt;/td&gt;
+&lt;td style="text-align:center"&gt;习以为常的风险；若被忽视，可能发展成为&lt;strong&gt;黑天鹅事件&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;黑天鹅事件&lt;/td&gt;
+&lt;td style="text-align:center"&gt;金融风暴、次贷危机&lt;/td&gt;
+&lt;td style="text-align:center"&gt;罕见且出人意料的风险，引起市场连锁负面反应甚至颠覆&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;幸存者偏差&lt;/td&gt;
+&lt;td style="text-align:center"&gt;沉默数据、死人不会说话&lt;/td&gt;
+&lt;td style="text-align:center"&gt;只看到筛选过的结果，忽略了被筛选掉的关键信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description><author>liushu1187419589@live.com (无尽藏海)</author><guid isPermaLink="true">/archives/economic-words/</guid><pubDate>Tue, 26 May 2020 20:40:00 +0806</pubDate></item></channel></rss>
