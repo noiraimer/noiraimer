@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>解语知音</title><link>/</link><description>温故而知新</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/logo.png</url><title>解语知音</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Fri, 29 May 2020 10:22:45 +0806</lastBuildDate><pubDate>Fri, 29 May 2020 10:22:45 +0806</pubDate><item><title>十九大报告</title><link>/archives/十九大报告/</link><description>&lt;p&gt;&lt;figure style="flex: 88.92092257001647" &gt;&lt;img width="2159" height="1214" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/fb1035b07a7a4c305af12622f74aa126.webp" /&gt;&lt;figcaption&gt;misaka&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>解语知音</title><link>/</link><description>温故而知新</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/logo.png</url><title>解语知音</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Fri, 29 May 2020 12:43:13 +0806</lastBuildDate><pubDate>Fri, 29 May 2020 12:43:13 +0806</pubDate><item><title>十九大报告</title><link>/archives/十九大报告/</link><description>&lt;p&gt;&lt;figure style="flex: 88.92092257001647" &gt;&lt;img width="2159" height="1214" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/fb1035b07a7a4c305af12622f74aa126.webp" /&gt;&lt;figcaption&gt;misaka&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;习近平：决胜全面建成小康社会 夺取新时代中国特色社会主义伟大胜利&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;——在中国共产党第十九次全国代表大会上的报告&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;来源：新华社2017年10月18日&lt;/p&gt;
@@ -227,6 +227,7 @@
 &lt;li&gt;连接CDN不畅通（对应5、8）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;免费用户无法指定CDN节点，大陆用户用DNS(CF)解析域名，经常会返回美国IP，造成国内访问不畅，响应慢，间歇性丢包。&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2&gt;🎈 对策&lt;/h2&gt;
 &lt;h4&gt;使用CNAME接入Cloudflare&lt;/h4&gt;
 &lt;p&gt;&lt;figure style="flex: 99.80842911877394" &gt;&lt;img width="1563" height="783" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/c789651333bee35b8de012bd7e3db083.webp" /&gt;&lt;/figure&gt;&lt;/p&gt;
