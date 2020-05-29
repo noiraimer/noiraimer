@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/ddc62cd5d91da1455ecac44903f0fefc.json"
+            api: "https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/ba9e32a65de44742f63349a0b3454bfa.json"
         }
     </script>
     
@@ -40,7 +40,7 @@
 
 
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/css/custom-0004.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/css/custom-0005.css">
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 <link rel="dns-prefetch" href="//noiramr.cn" />
@@ -96,7 +96,7 @@
                 <div class="notice">去年用Hexo简单配置了一个博客，但是访问速度很不理想(特指移动宽带)。绑定免费域名套上CDN后有所改善，然而好景不长，域名到期后开始收费(特指Freenom)，遂放弃。后来找到Maverick搭建Gitpage，决定好好利用一下，在博客优化上做点功夫。所有技术及工具均来自网络，我只是一名搬运工哈哈。</div><p>网上很多优化教程都是针对CF基础功能的配置，治标不治本。后来找到使用CNAME替代NS接入CF的方法，比较适用于国内，也是我推荐的。一开始我真没搞懂“CNAME接入”是什么意思😆我寻思这Cloudflare（简称CF）本身就有CNAME了啊。后来明白其实是为了<strong>用DNS(国内)替代DNS(CF)，这样就能自定义要指向的DNS(CF)节点，从而我们可以挑选国内访问较稳定的节点</strong>。</p>
 <p>即由：用户-&gt;DNS(CF)-&gt;随机CDN(CF)-&gt;Github</p>
 <p>改成：用户-&gt;DNS(国内)-&gt;自定CDN(CF)-&gt;Github</p>
-<h2>原理探究</h2>
+<h2>🧪 原理探究</h2>
 <h3>问题</h3>
 <p><figure style="flex: 96.12546125461255" ><img width="1563" height="813" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/583213d0f01a3ff9626ade9a357c8c92.webp" /><figcaption>2、3、5、8相对不畅通</figcaption></figure></p>
 <p>那么为什么要放弃使用DNS(CF)呢？因为在大陆会产生如下两个问题：</p>
@@ -104,7 +104,7 @@
 <p>DNS将域名转换为IP地址，充当互联网的地址簿。当用户输入网站域名时，该查询通常会转到递归DNS以查找相应的计算机地址。如果递归DNS未查询到，则会向权威DNS查询，权威DNS将该域名映射的IP地址给本地。最后本地服务器将获取到的IP返回给用户，并进行网站访问。所以域名的NS在国外的话，解析速度会变慢。</p>
 <p><strong>2.连接CDN不畅通（对应5、8）</strong></p>
 <p>免费用户无法指定CDN节点，大陆用户用DNS(CF)解析域名，经常会返回美国IP，造成国内访问不畅，响应慢，间歇性丢包。</p>
-<h3>对策</h3>
+<h2>🎈 对策</h2>
 <h4>CNAME接入CF</h4>
 <p><figure style="flex: 99.80842911877394" ><img width="1563" height="783" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/c789651333bee35b8de012bd7e3db083.webp" /></figure></p>
 <p>CNAME接入后我们可以在本地DNS设定优选CDN的IP，DNS(国内)就不必去DNS(CF)寻找，用户可以很快得到优选CDN的IP，并与其畅通地交换数据。</p>
@@ -113,7 +113,7 @@
 <p>这一步可有可无，推荐静态博客使用。主机用户可用CP面板免费提供的Railgun动态加速。</p>
 <p><figure style="flex: 84.40514469453376" ><img width="1575" height="933" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/69b7ce1d079d0079fb13dce5c9fec4c4.webp" /></figure></p>
 <hr>
-<h2>动手改造</h2>
+<h2>🔧 动手改造</h2>
 <p><figure style="flex: 227.2983114446529" ><img width="2423" height="533" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/5443269dbe6ed60bbfdd5feb0eebab24.webp" /><figcaption>方法流程</figcaption></figure></p>
 <p>CF没有对免费用户开放CNAME接入，但是可以使用Cloudflare Partner（简称CP）曲线救国，我用的是<a href="https://cdn.bnxb.com">笨牛网</a>。步骤如下：</p>
 <h3>Cloudflare Partner配置</h3>
@@ -126,14 +126,14 @@
 <p>在DNS<strong>解析设置</strong>添加一个记录，主机记录就随意啦，但是<strong>要和CP面板保持一致</strong>。<strong>记录值</strong>是重点，也就是我们要指定的CDN的IP。可以到网上搜索稳定的CDN节点。推荐两个列表：<a href="https://wzfou.com/question/11632/">Cloudflare指定IP集合</a>和<a href="https://www.iamhippo.com/2019-06/866.html">Cloudflare 推荐节点IP</a>，百度云合作节点或者1.0.0.1也不错。可以只指定默认线路，也可针对移动、联通、电信分设不同记录值。</p>
 <p><figure style="flex: 69.57264957264957" ><img width="814" height="585" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/02958c964757a62d54b86d15b43aefb7.png" /></figure></p>
 <p>至此DNS的配置就结束了，等其生效即可。</p>
-<h3>CDN缓存优化</h3>
+<h3>CDN缓存优化（可选）</h3>
 <h4>缓存静态内容</h4>
 <p>适用于静态博客(Gitpage)，Wordpress用户请搜索排除后端程序的规则。页面规则(Page Rules)添加一条规则，用来缓存所有内容。</p>
 <p><figure style="flex: 81.99300699300699" ><img width="938" height="572" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/02359c3a0a49fe20ab76d682dc361fcd.png" /></figure></p>
 <h4>压缩HTML、CSS、JS</h4>
 <p>“Speed”-&gt;“Optimization”-&gt;“Auto Minify”选中HTML、CSS、JS。</p>
 <hr>
-<h2>后记</h2>
+<h2>☂ 后记</h2>
 <p>在万网买了域名之后，原想备案后白嫖国内CDN，结果备案还要买三个月主机🤦‍♂️本来是只想加速Gitpage的说。罢了罢了，只能接着用Cloudflare，网上发现了CNAME教程，就索性整理一下。CNAME接入需要定位到稳定的CDN节点才有好的效果，所以不是很完美，现在我的博客有时也会加载不出来，但是比原先好了不少。这是一个不靠谱的优化推荐😆用词及绘图有不正确的地方欢迎指出。</p>
 
             </div>
