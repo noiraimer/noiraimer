@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/ba9e32a65de44742f63349a0b3454bfa.json"
+            api: "https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/5a7f71f47fd36d05875ed2b3887e3c00.json"
         }
     </script>
     
@@ -100,12 +100,16 @@
 <h3>问题</h3>
 <p><figure style="flex: 96.12546125461255" ><img width="1563" height="813" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/583213d0f01a3ff9626ade9a357c8c92.webp" /><figcaption>2、3、5、8相对不畅通</figcaption></figure></p>
 <p>那么为什么要放弃使用DNS(CF)呢？因为在大陆会产生如下两个问题：</p>
-<p><strong>1.DNS解析缓慢（对应2、3）</strong></p>
+<ol>
+<li>DNS解析缓慢（对应2、3）</li>
+</ol>
 <p>DNS将域名转换为IP地址，充当互联网的地址簿。当用户输入网站域名时，该查询通常会转到递归DNS以查找相应的计算机地址。如果递归DNS未查询到，则会向权威DNS查询，权威DNS将该域名映射的IP地址给本地。最后本地服务器将获取到的IP返回给用户，并进行网站访问。所以域名的NS在国外的话，解析速度会变慢。</p>
-<p><strong>2.连接CDN不畅通（对应5、8）</strong></p>
+<ol>
+<li>连接CDN不畅通（对应5、8）</li>
+</ol>
 <p>免费用户无法指定CDN节点，大陆用户用DNS(CF)解析域名，经常会返回美国IP，造成国内访问不畅，响应慢，间歇性丢包。</p>
 <h2>🎈 对策</h2>
-<h4>CNAME接入CF</h4>
+<h4>使用CNAME接入Cloudflare</h4>
 <p><figure style="flex: 99.80842911877394" ><img width="1563" height="783" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/c789651333bee35b8de012bd7e3db083.webp" /></figure></p>
 <p>CNAME接入后我们可以在本地DNS设定优选CDN的IP，DNS(国内)就不必去DNS(CF)寻找，用户可以很快得到优选CDN的IP，并与其畅通地交换数据。</p>
 <p>PS：虽然说的是“CNAME接入CDN(CF)”，但在设置DNS(国内)解析记录时却是使用的A记录，目的是为了更自由地选择CDN节点。</p>
@@ -116,21 +120,29 @@
 <h2>🔧 动手改造</h2>
 <p><figure style="flex: 227.2983114446529" ><img width="2423" height="533" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/5443269dbe6ed60bbfdd5feb0eebab24.webp" /><figcaption>方法流程</figcaption></figure></p>
 <p>CF没有对免费用户开放CNAME接入，但是可以使用Cloudflare Partner（简称CP）曲线救国，我用的是<a href="https://cdn.bnxb.com">笨牛网</a>。步骤如下：</p>
-<h3>Cloudflare Partner配置</h3>
-<p>1.若未在官网申请过域名接入，可直接在CP<strong>添加域名</strong>。回源地址，静态博客(Gitpage)可以直接填写域名，如果使用自用主机，回源地址先不必填，提交后到“解析管理”把默认生成的CNAME记录改成A记录（IP方式回源）。</p>
+<h3>一、Cloudflare Partner配置</h3>
+<ul>
+<li>若未在官网申请过域名接入，可直接在CP<strong>添加域名</strong>。回源地址，静态博客(Gitpage)可以直接填写域名，如果使用自用主机，回源地址先不必填，提交后到“解析管理”把默认生成的CNAME记录改成A记录（IP方式回源）。</li>
+</ul>
 <p><figure style="flex: 97.01086956521739" ><img width="1071" height="552" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/823eb2f7df0021278f8728463d13d3dd.png" /></figure></p>
-<p>2.若已在CF中添加过域名，可在<strong>域名列表</strong>中找到并到<strong>解析设置</strong>中选择<strong>接入本站CNAME</strong>即可</p>
+<ul>
+<li>若已在CF中添加过域名，可在<strong>域名列表</strong>中找到并到<strong>解析设置</strong>中选择<strong>接入本站CNAME</strong>即可</li>
+</ul>
 <p><figure style="flex: 120.0" ><img width="744" height="310" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/5e3e2ececcf306fd60f7e467e59ff6e5.png" /></figure></p>
-<h3>DNS(国内)解析设置</h3>
-<p>若曾把域名的DNS服务器改为CF，需要在域名面板还原，或另选DNS服务商，最好是国内的。没改过就不必动啦。我的域名是在万网买的，所以直接用了阿里云的DNS。</p>
+<h3>二、DNS(国内)解析设置</h3>
+<p>若曾把域名的DNS服务器改为CF，需要在域名面板还原，或另选DNS服务商，最好是国内的。没改过就不必动啦。我的域名是在万网买的，所以直接用了阿里云的DNS服务器。</p>
 <p>在DNS<strong>解析设置</strong>添加一个记录，主机记录就随意啦，但是<strong>要和CP面板保持一致</strong>。<strong>记录值</strong>是重点，也就是我们要指定的CDN的IP。可以到网上搜索稳定的CDN节点。推荐两个列表：<a href="https://wzfou.com/question/11632/">Cloudflare指定IP集合</a>和<a href="https://www.iamhippo.com/2019-06/866.html">Cloudflare 推荐节点IP</a>，百度云合作节点或者1.0.0.1也不错。可以只指定默认线路，也可针对移动、联通、电信分设不同记录值。</p>
 <p><figure style="flex: 69.57264957264957" ><img width="814" height="585" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/02958c964757a62d54b86d15b43aefb7.png" /></figure></p>
 <p>至此DNS的配置就结束了，等其生效即可。</p>
-<h3>CDN缓存优化（可选）</h3>
-<h4>缓存静态内容</h4>
+<h3>三、CDN缓存优化（可选）</h3>
+<ul>
+<li><strong>缓存静态内容</strong></li>
+</ul>
 <p>适用于静态博客(Gitpage)，Wordpress用户请搜索排除后端程序的规则。页面规则(Page Rules)添加一条规则，用来缓存所有内容。</p>
 <p><figure style="flex: 81.99300699300699" ><img width="938" height="572" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/02359c3a0a49fe20ab76d682dc361fcd.png" /></figure></p>
-<h4>压缩HTML、CSS、JS</h4>
+<ul>
+<li><strong>压缩HTML、CSS、JS</strong></li>
+</ul>
 <p>“Speed”-&gt;“Optimization”-&gt;“Auto Minify”选中HTML、CSS、JS。</p>
 <hr>
 <h2>☂ 后记</h2>
