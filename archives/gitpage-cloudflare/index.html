@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/d3f817f49a39fae6c27247477210fd6f.json"
+            api: "https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/4483d6dc12153c423799d258320897af.json"
         }
     </script>
     
@@ -104,11 +104,11 @@
 <li>DNS解析缓慢（对应2、3）</li>
 </ol>
 <p>DNS将域名转换为IP地址，充当互联网的地址簿。当用户输入网站域名时，该查询通常会转到递归DNS以查找相应的计算机地址。如果递归DNS未查询到，则会向权威DNS查询，权威DNS将该域名映射的IP地址给本地。最后本地服务器将获取到的IP返回给用户，并进行网站访问。所以域名的NS在国外的话，解析速度会变慢。</p>
-<ol>
+<ol start="2">
 <li>连接CDN不畅通（对应5、8）</li>
 </ol>
 <p>免费用户无法指定CDN节点，大陆用户用DNS(CF)解析域名，经常会返回美国IP，造成国内访问不畅，响应慢，间歇性丢包。</p>
-<hr>
+<hr />
 <h2>🎈 对策</h2>
 <h4>使用CNAME接入Cloudflare</h4>
 <p><figure style="flex: 99.80842911877394" ><img width="1563" height="783" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/c789651333bee35b8de012bd7e3db083.webp" /></figure></p>
@@ -117,7 +117,7 @@
 <h4>CDN缓存静态文件(可选)</h4>
 <p>这一步可有可无，推荐静态博客使用。主机用户可用CP面板免费提供的Railgun动态加速。</p>
 <p><figure style="flex: 84.40514469453376" ><img width="1575" height="933" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/69b7ce1d079d0079fb13dce5c9fec4c4.webp" /></figure></p>
-<hr>
+<hr />
 <h2>🔧 动手改造</h2>
 <p><figure style="flex: 227.2983114446529" ><img width="2423" height="533" src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/archives/assets/5443269dbe6ed60bbfdd5feb0eebab24.webp" /><figcaption>方法流程</figcaption></figure></p>
 <p>CF没有对免费用户开放CNAME接入，但是可以使用Cloudflare Partner（简称CP）曲线救国，我用的是<a href="https://cdn.bnxb.com">笨牛网</a>。步骤如下：</p>
@@ -145,7 +145,7 @@
 <li><strong>压缩HTML、CSS、JS</strong></li>
 </ul>
 <p>“Speed”-&gt;“Optimization”-&gt;“Auto Minify”选中HTML、CSS、JS。</p>
-<hr>
+<hr />
 <h2>☂ 后记</h2>
 <p>在万网买了域名之后，原想备案后白嫖国内CDN，结果备案还要买三个月主机🤦‍♂️本来是只想加速Gitpage的说。罢了罢了，只能接着用Cloudflare，网上发现了CNAME教程，就索性整理一下。CNAME接入需要定位到稳定的CDN节点才有好的效果，所以不是很完美，现在我的博客有时也会加载不出来，但是比原先好了不少。这是一个不靠谱的优化推荐😆用词及绘图有不正确的地方欢迎指出。</p>
 
