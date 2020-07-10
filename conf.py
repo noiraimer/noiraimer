@@ -92,6 +92,7 @@ valine = {
     "placeholder": "说点什么吧，昵称可填QQ号，上述信息留空可匿名留言。",
     "comment_count": "true",
     "visitor":  "true",
+    "meta": ['昵称/QQ',"邮箱","网址(http/https)"],
     "enableQQ": "true",
     "serverURLs": "https://tab.leancloud.cn",
     "emojiMaps": {
