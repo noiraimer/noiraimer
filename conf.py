@@ -89,10 +89,9 @@ valine = {
     "el": '#vcomments',
     "appId": "KgL1pm7KXVOK7PlT4SFO8vYJ-9Nh9j0Va",
     "appKey": "dkFFObbxzdOEUUccBaq0Oxsp",
-    "placeholder": "说点什么吧，昵称可填QQ号，上述信息留空可匿名留言。",
+    "placeholder": "请畅所欲言，昵称可填QQ号（自动获取头像）或自定义，全部信息留空可匿名留言。",
     "comment_count": "true",
     "visitor":  "true",
-    "requiredFields": ['昵称/QQ','邮箱','网址(http/https)'],
     "enableQQ": "true",
     "serverURLs": "https://tab.leancloud.cn",
     "emojiMaps": {
