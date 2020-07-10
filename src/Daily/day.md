@@ -2,7 +2,7 @@
 layout: post
 title: DailyMix
 slug: day
-date: 2020-02-29
+date: 2020-07-10
 status: hide
 author: 无尽藏海
 categories: 
@@ -12,13 +12,13 @@ tags:
 excerpt: 一点点碎片，随心记录的闲言碎语。
 ---
 
+## 2020-7-10
+
+噩梦暂时结束了，但还是要从自身找问题，避免噩梦重演，这是当下最重要的。
+
 ## 2020-5-29
 
 <iframe src="//player.bilibili.com/player.html?aid=70802717&bvid=BV1nE411o7qp&cid=122669680&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-## 2020-4-24
-
-第二集挺不错的。
 
 ## 2020-4-23
 

@@ -40,18 +40,6 @@ external_links = [
         "url": "${site_prefix}friends/",
         "brief": "山水会知音",
         "target": "_self"
-    },
-    {
-        "name": "朝花夕拾",
-        "url": "https://noiramr.cn/archives/day",
-        "brief": "我思故我在",
-        "target": "_self"
-    },
-    {
-        "name": "解语知识",
-        "url": "https://wiki.noiramr.cn",
-        "brief": "学而时习之",
-        "target": "_blank"
     }
 
 ]
@@ -101,12 +89,16 @@ valine = {
     "el": '#vcomments',
     "appId": "KgL1pm7KXVOK7PlT4SFO8vYJ-9Nh9j0Va",
     "appKey": "dkFFObbxzdOEUUccBaq0Oxsp",
-    "placeholder": "说点什么，昵称可填QQ号，上述信息均可留空。",
+    "placeholder": "说点什么吧，昵称可填QQ号，上述信息留空可匿名留言。",
     "comment_count": "true",
     "visitor":  "true",
     "enableQQ": "true",
     "serverURLs": "https://tab.leancloud.cn",
     "emojiMaps": {
+                "阿部高和": "https://js2.a.yximgs.com/bs2/emotion/1585589497461third_party_b35232076.gif",
+                "偷笑": "https://ali2.a.yximgs.com/bs2/emotion/1585589499179third_party_b35232117.gif",
+                "闪": "https://js2.a.yximgs.com/bs2/emotion/1585589497940third_party_b35232087.gif",
+                "哭笑不得": "https://tx2.a.yximgs.com/bs2/emotion/1585589498975third_party_b35232110.gif",
                   "tv_doge": "https://i0.hdslb.com/bfs/emote/6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
                   "tv_亲亲": "https://i0.hdslb.com/bfs/emote/a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
                   "tv_偷笑": "https://i0.hdslb.com/bfs/emote/bb690d4107620f1c15cff29509db529a73aee261.png",
