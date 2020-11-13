@@ -157,7 +157,7 @@ head_addon = r'''
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 <link rel="dns-prefetch" href="//noiramr.cn" />
 <link rel="shortcut icon" href="${static_prefix}favicon.ico?v=yyLyaqbyRG">
-<script src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/js/time-0004.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/noiraimer/blog@gh-pages/js/time-0005.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
 '''
