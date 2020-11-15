@@ -89,7 +89,7 @@ valine = {
     "el": '#vcomments',
     "appId": "KgL1pm7KXVOK7PlT4SFO8vYJ-9Nh9j0Va",
     "appKey": "dkFFObbxzdOEUUccBaq0Oxsp",
-    "placeholder": "请畅所欲言，昵称可填QQ号（自动获取头像）或自定义，全部信息留空可匿名留言。",
+    "placeholder": "请文明畅所欲言，为避免打扰大家，未设置回复邮件提醒。&#10QQ网友：在昵称填QQ号即可（自动获取昵称和头像）。&#10博客网友：填写邮箱获取Avatar头像，欢迎留下贵站网址。&#10匿名网友：全部信息留空可匿名留言。",
     "comment_count": "true",
     "visitor":  "true",
     "enableQQ": "true",
