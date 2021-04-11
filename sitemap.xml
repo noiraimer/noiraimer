@@ -5,49 +5,49 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	
 
 <url>
-    <loc>/friends/</loc>
+    <loc>/blog/friends/</loc>
     <lastmod>2020-02-11</lastmod>
     <changefreq>always</changefreq>
     <priority>0.8</priority>
 </url>
 
 <url>
-    <loc>/about/</loc>
+    <loc>/blog/about/</loc>
     <lastmod>2020-02-01</lastmod>
     <changefreq>always</changefreq>
     <priority>0.8</priority>
 </url>
 
 <url>
-    <loc>/archives/economic-words/</loc>
+    <loc>/blog/archives/economic-words/</loc>
     <lastmod>2020-05-26</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
 </url>
 
 <url>
-    <loc>/archives/animation/</loc>
+    <loc>/blog/archives/animation/</loc>
     <lastmod>2020-05-01</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
 </url>
 
 <url>
-    <loc>/archives/gitpage-cloudflare/</loc>
+    <loc>/blog/archives/gitpage-cloudflare/</loc>
     <lastmod>2020-02-10</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
 </url>
 
 <url>
-    <loc>/archives/2019-nCoV/</loc>
+    <loc>/blog/archives/2019-nCoV/</loc>
     <lastmod>2020-02-03</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
 </url>
 
 <url>
-    <loc>/archives/十九大报告/</loc>
+    <loc>/blog/archives/十九大报告/</loc>
     <lastmod>2020-02-01</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
