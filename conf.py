@@ -64,7 +64,7 @@ nav = [
 social_links = [
     {
         "name": "RSS",
-        "url": "https://noiramr.cn/feed/index.xml",
+        "url": "https://noiraimer.github.io/feed/index.xml",
         "icon": ""
     },
     {
