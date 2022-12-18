@@ -3,7 +3,7 @@
 """
 
 # For Maverick
-site_prefix = "/"
+site_prefix = "/noiraimer.github.io/"
 source_dir = "../src/"
 build_dir = "../dist/"
 index_page_size = 10
@@ -30,7 +30,7 @@ site_logo = "${static_prefix}logo.png"
 site_build_date = "2020/1/31 16:51"
 author = "无尽藏海"
 email = "liushu1187419589@live.com"
-author_homepage = "https://noiramr.cn"
+author_homepage = "https://noiraimer.github.io/"
 description = "温故而知新"
 key_words = ['blog']
 language = 'zh-CN'
