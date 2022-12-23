@@ -41,6 +41,12 @@ external_links = [
         "brief": "山水会知音",
         "target": "_self"
     }
+    {
+        "name": "日志",
+        "url": "${site_prefix}archives/day/",
+        "brief": "记录心情",
+        "target": "_day"
+    }
 
 ]
 nav = [
