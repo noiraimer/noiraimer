@@ -40,7 +40,7 @@ external_links = [
         "url": "${site_prefix}friends/",
         "brief": "山水会知音",
         "target": "_self"
-    }
+    },
     {
         "name": "日志",
         "url": "${site_prefix}archives/day/",
